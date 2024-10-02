@@ -3,6 +3,7 @@
 n: represents the number of rows
 """
 
+
 def pascal_triangle(n):
 	if n <= 0:
 		return []
