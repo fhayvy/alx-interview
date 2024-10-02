@@ -3,12 +3,15 @@
 
 
 def pascal_triangle(n):
+	"""returns a list of lists of numbers
+    representing the pascal triangle"""
 	if n <= 0:
 		return []
 	
-	result = []
+	result = [[1]]
 
 	for row in range(1, n):
+
 		new_row = [1]
 
 		for i in range(1, row):
