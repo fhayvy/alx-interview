@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""This script produces a Pascal's Triangle
+n: represents the number of rows
+"""
 
 def pascal_triangle(n):
 	if n <= 0:
