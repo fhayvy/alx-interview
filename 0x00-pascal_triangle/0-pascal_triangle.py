@@ -1,22 +1,32 @@
 #!/usr/bin/python3
-"""This script produces a Pascal's Triangle
-n: represents the number of rows
-"""
+"""Module contains pascal_triangle fnction"""
 
 
-def pascal_triangle(n):
-	if n <= 0:
-		return []
-	
-	result = [[1]]
+def pascal_triangle(n: int) -> list:
+    """
+    Args:
+      n: integer
+    return:
+      a list of list of pascal triangle
+    """
+    if n <= 0:
+        return []
+    pascal = []
 
-	for row in range(1, n):
-		new_row = [1]
+    for i in range(0, n):
+        pascal.append([comb(i, k) for k in range(0, i + 1)])
 
-		for i in range(1, row):
-			new_row.append(result[-1][i-1] + result[-1][i])
+    return pascal
 
-		new_row.append(1)
-		result.append(new_row)
 
-	return result
+def comb(n, k):
+    """return the combination of n,k"""
+    c = fact(n) // (fact(n-k) * fact(k))
+    return c
+
+
+def fact(n):
+    """return n factorial"""
+    if n <= 1:
+        return 1
+    return n * fact(n-1)
